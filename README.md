@@ -8,7 +8,7 @@ Letter Template
 Default packages, macros, and bibliography.
 ### wmu
 Western Michigan University thesis template.
-## installation
+## Installation
 ### Git
 To check out the entire repository, use the following command
 >`git clone https://github.com/jonlighthall/latex.git`
