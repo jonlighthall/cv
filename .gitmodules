@@ -1,0 +1,6 @@
+[submodule "src"]
+	path = src
+	url = https://github.com/jonlighthall/src.git
+[submodule "wmu"]
+	path = wmu
+	url = https://github.com/jonlighthall/wmu.git
