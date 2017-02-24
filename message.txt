@@ -1,0 +1,21 @@
+[lighthall@elwood latex]$ git submodule update --init
+Submodule 'src' (https://github.com/jonlighthall/src.git) registered for path 'src'
+Submodule 'wmu' (https://github.com/jonlighthall/wmu.git) registered for path 'wmu'
+Cloning into 'src'...
+warning: protocol restrictions not applied to curl redirects because
+your curl version is too old (>= 7.19.4)
+remote: Counting objects: 241, done.
+remote: Compressing objects: 100% (92/92), done.
+remote: Total 241 (delta 151), reused 238 (delta 148), pack-reused 0
+Receiving objects: 100% (241/241), 86.59 KiB, done.
+Resolving deltas: 100% (151/151), done.
+Submodule path 'src': checked out '122d6979cc119423a40ed594173bd71dc3dbd02a'
+Cloning into 'wmu'...
+warning: protocol restrictions not applied to curl redirects because
+your curl version is too old (>= 7.19.4)
+remote: Counting objects: 521, done.
+remote: Compressing objects: 100% (274/274), done.
+remote: Total 521 (delta 230), reused 521 (delta 230), pack-reused 0
+Receiving objects: 100% (521/521), 395.39 KiB, done.
+Resolving deltas: 100% (230/230), done.
+Submodule path 'wmu': checked out 'e204a79a64b554576e83e87f1614598cef6850e0'
