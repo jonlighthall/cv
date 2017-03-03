@@ -1,0 +1,11 @@
+#LaTeX
+*.aux
+*.log
+*.out
+*.synctex
+*.tcp
+*.tps
+
+#Emacs
+*~
+\#*#

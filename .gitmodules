@@ -4,3 +4,6 @@
 [submodule "wmu"]
 	path = wmu
 	url = https://github.com/jonlighthall/wmu.git
+[submodule "ltr/test"]
+	path = ltr/test
+	url = https://jonlighthall@bitbucket.org/jonlighthall/test.git
