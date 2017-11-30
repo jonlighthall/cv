@@ -1,11 +1,29 @@
-#LaTeX
+## LaTeX
+## Auxiliary files:
 *.aux
+*.lof
 *.log
+*.lot
 *.out
-*.synctex
-*.tcp
-*.tps
+*.toc
 
-#Emacs
+## Intermediate documents:
+*.dvi
+*-converted-to.*
+
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.blg
+
+## Build tool auxiliary files:
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+
+# elsarticle (documentclass of Elsevier journals)
+*.spl
+
+## Emacs
 *~
 \#*#
