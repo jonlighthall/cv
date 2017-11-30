@@ -7,6 +7,12 @@
 *.out
 *.toc
 
+## Project files:
+*.tcp
+*.tps
+*.texnicle
+*.texnicle.backup
+
 ## Intermediate documents:
 *.dvi
 *-converted-to.*
