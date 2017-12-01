@@ -2,6 +2,7 @@
 \newdate{letterdate}{19}{02}{2016}
 
 %% Enter recipient address here
+\renewcommand{\recipprefix}{Subunit\\}
 \renewcommand{\recip}{Company}
 \renewcommand{\comp}{Program} %recip suffix
 \renewcommand{\recipaddress}{Street\\
@@ -13,13 +14,14 @@ Canada}
 \renewcommand{\addresssuffix}{\\
 (604) 222-1047 ext. 6859
 %| cell: (778) 999-6006\\
-| \href{mailto:lighthall@triumf.ca}{lighthall@triumf.ca}\\%
+| \href{mailto:lighthall@triumf.ca}{lighthall@triumf.ca}\\%\vspace*{2.0\baselineskip}
 }
 
 \ltrwrapper{\workaddress}{%two arguments: address, text
 \pangram{25}
 }
 
+%% List enclosures here
 \vspace*{2.0\baselineskip}
 \noindent Enclosures:\\
 \vspace*{-10pt}
@@ -29,5 +31,8 @@ Canada}
 \hspace{-6pt}hello & (1 page)\\
 \hspace{-6pt}hello & (2 pages)\\
 \hspace{-6pt}hello & (3 pages)\\
-\end{tabular}%
+\end{tabular}
+
+%% Enter postscript here
+\vspace*{2.0\baselineskip}
 %\pangram{25}
