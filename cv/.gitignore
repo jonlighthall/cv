@@ -1,0 +1,10 @@
+## Project files:
+*.tcp
+*.tps
+*.texnicle
+*.texnicle.backup
+
+## Output documents (current directory only):
+/*.dvi
+/*.ps
+/*.pdf

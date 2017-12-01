@@ -6,7 +6,7 @@ Version=4
 MainFile=cv_main_with_cover.tex
 UseBibTeX=1
 UseMakeIndex=0
-ActiveProfile=LaTeX ⇨ PDF + Multibib
+ActiveProfile=LaTeX ⇨ PDF
 ProjectLanguage=en
 ProjectDialect=US
 
