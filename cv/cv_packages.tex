@@ -2,17 +2,8 @@
 \providecommand{\printname}{Jonathan C.\ Lighthall}
 \newcommand{\shortname}{J.\ C.\ Lighthall}
 
-%% Load and modify settings from the letter template
-%% Set indentation here
-%% The letter should either be indented (each paragraph, address, and signature) or not at all
-\def\indent{3in}
-%\setlength{\parindent}{0in}
-\InputIfFileExists{../ltr/letter_layout}{\graphicspath{{../ltr/}}}{%
-\InputIfFileExists{../../ltr/letter_layout}{\graphicspath{{../../ltr/}}}{}}
- %path to signatures
-
-%\addtolength{\textwidth}{0.5in}	%increase text width to 9in
-%\addtolength{\hoffset}{-0.5in} %decrease left margin to 1.5in
+\input{../ltr/letter_layout}
+\graphicspath{{../ltr/signatures/}}
 
 \newcommand{\boldtext}[1]{\textbf{\scshape\normalsize#1}}
 \newcommand{\desctext}[1]{\textit{\normalsize#1}}
@@ -93,6 +84,48 @@
 		}%
 { \end{list} }
 
+%% Definitions for extras
 \newcommand{\extra}[1]{{\color{note_gray}#1}} %print extra items in gray
 %\renewcommand{\extra}[1]{#1} %Enters "notes" into text
-\renewcommand{\extra}[1]{} %Deletes "notes"
+%\renewcommand{\extra}[1]{} %Deletes "notes"
+
+%% CV letter wrapper - use to wrap the CV with a cover letter
+\newcommand{\cvwrapper}[3] {%three arguments: pagestyle, right header, text
+\clearpage
+\pagestyle{#1}
+%\providecommand{\desctext}[1]{#1}%description text
+\rhead{\desctext{#2}}
+%\rhead{\textbf{#2}}
+\phantomsection
+\addcontentsline{toc}{chapter}{#2}
+\begin{changemargin}{\indent}
+\nameaddress{\workaddress}\\
+\\
+\displaydate{letterdate}
+\end{changemargin}
+
+\vspace*{2.0\baselineskip}%triple space
+\noindent \recip{} \comp{}\\
+\recipaddress{}
+\vspace*{1.0\baselineskip}%triple space
+
+\noindent
+To Whom It May Concern at \recip,\\
+%Dear \recip,\\
+
+#3\\
+\begin{changemargin}{\indent}
+Sincerely,
+
+\vspace*{-0.9\baselineskip}
+\begin{figure}[h!]
+\begin{changemargin}{\indent}
+		%\includegraphics[height=2.22cm,keepaspectratio]{_DS14681}%full size
+		\includegraphics[height=1cm,keepaspectratio]{_DS14681}%fits in space
+		%\includegraphics[height=1cm,keepaspectratio]{Holly_signature}
+		\end{changemargin}
+\end{figure}
+\vspace*{-1.0\baselineskip}
+\printname
+\end{changemargin}
+}
