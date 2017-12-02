@@ -34,8 +34,9 @@
 %% a script.  For example, create a batch file in the current directory with the following
 %% contents:
 %% for %%f in (*.aux) do "C:\Program Files\MiKTeX 2.9\miktex\bin\bibtex.exe" %%~nf
-%% Then, define a new output profile (in TeXnicCenter) which points to the new batch file.
-%\IfFileExists{multibib.bat}{}{\errmessage{Batch file for multibib not found}}
+%% Then, define a new output profile (in TeXnicCenter) and enter the path of the new batch
+%% file in the Path to BibTex executable field.
+\IfFileExists{multibib.bat}{}{\errmessage{Batch file for multibib not found}}
 \newcites{talk}{Presentations}
 \newcites{proc}{Proceedings}
 \newcites{invi}{Invited Talks}

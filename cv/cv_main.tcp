@@ -6,7 +6,7 @@ Version=4
 MainFile=cv_main.tex
 UseBibTeX=1
 UseMakeIndex=0
-ActiveProfile=LaTeX ⇨ PDF
+ActiveProfile=LaTeX ⇨ PDF multibib
 ProjectLanguage=en
 ProjectDialect=US
 
