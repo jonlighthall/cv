@@ -3,7 +3,9 @@
 \documentclass[oneside]{article}
 \input{../src/packages}
 \input{cv_packages}
-
+\def\reducemargin{0.0in}
+\addtolength{\textwidth}{\reducemargin}		
+\addtolength{\hoffset}{-\reducemargin} 
 \begin{document}
 %% Commands from other bibtest versions--------------------------
 %Here is the first citation \citet[some equation]{Lighthall_2010}.	%from bibtest_cv.tex
@@ -55,8 +57,8 @@
 \cfoot{\thepage{} of \pageref{LastPage}}
 
 %% Select document type here
-%\cvonly
-\cvandpubs
+\cvonly
+%\cvandpubs
 %\cvandpubsbreak
 %\publistonly
 

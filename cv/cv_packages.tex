@@ -1,9 +1,12 @@
 %% Formatting packages-----------%-------------------------------
+\usepackage{multicol}
 \providecommand{\printname}{Jonathan C.\ Lighthall}
 \newcommand{\shortname}{J.\ C.\ Lighthall}
 
-\input{../ltr/letter_layout}
-\graphicspath{{../ltr/signatures/}}
+\InputIfFileExists{../ltr/letter_layout}{}{%
+\InputIfFileExists{../../ltr/letter_layout}{}{\errmessage{letter_layout.tex not found!}}}
+
+\graphicspath{{../ltr/signatures/}{../../ltr/signatures/}}
 
 \newcommand{\boldtext}[1]{\textbf{\scshape\normalsize#1}}
 \newcommand{\desctext}[1]{\textit{\normalsize#1}}
@@ -36,7 +39,7 @@
 %% for %%f in (*.aux) do "C:\Program Files\MiKTeX 2.9\miktex\bin\bibtex.exe" %%~nf
 %% Then, define a new output profile (in TeXnicCenter) and enter the path of the new batch
 %% file in the Path to BibTex executable field.
-\IfFileExists{multibib.bat}{}{\errmessage{Batch file for multibib not found}}
+%\IfFileExists{multibib.bat}{}{\errmessage{Batch file for multibib not found}}
 \newcites{talk}{Presentations}
 \newcites{proc}{Proceedings}
 \newcites{invi}{Invited Talks}
@@ -102,7 +105,7 @@
 \begin{changemargin}{\indent}
 \nameaddress{\workaddress}\\
 \\
-\displaydate{letterdate}
+\longusdate\displaydate{letterdate}
 \end{changemargin}
 
 \vspace*{2.0\baselineskip}%triple space
@@ -115,18 +118,57 @@ To Whom It May Concern at \recip,\\
 %Dear \recip,\\
 
 #3\\
-\begin{changemargin}{\indent}
-Sincerely,
-
-\vspace*{-0.9\baselineskip}
-\begin{figure}[h!]
-\begin{changemargin}{\indent}
-		%\includegraphics[height=2.22cm,keepaspectratio]{_DS14681}%full size
-		\includegraphics[height=1cm,keepaspectratio]{_DS14681}%fits in space
-		%\includegraphics[height=1cm,keepaspectratio]{Holly_signature}
-		\end{changemargin}
-\end{figure}
-\vspace*{-1.0\baselineskip}
-\printname
-\end{changemargin}
+\sign{}
 }
+
+%\usepackage[explicit]{titlesec}
+%\usepackage{everyshi}% http://ctan.org/pkg/everyshi
+%\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+%\makeatletter
+%
+%\titleformat{name=\section,numberless}
+  %{\scshape\bfseries\normalsize}
+  %{}
+  %{0pt}
+  %{\gdef\@section@title@{#1 (continued)}#1}
+%
+%\titlespacing{\section}
+  %{0pt}
+  %{3ex plus 2ex minus 1ex}
+  %{1ex plus .5ex minus .5ex}
+%
+%\let\@section@title@\relax% Sectional heading storage
+%%\def\print@section@title@{%
+  %%{\noindent\scshape\bfseries\normalsize\@section@title@}\par\vspace{1ex plus .5ex minus .5ex}%
+%%}
+%%\EveryShipout{%
+  %%\ifdim\pagetotal>\pagegoal% There is content overflow on this page
+    %%\aftergroup\print@section@title@% Reprint/-insert sectional heading
+  %%\fi%
+%%}
+%\makeatother
+
+%\usepackage{titlesec}
+%\usepackage{everyshi}
+%\makeatletter
+%%\titleformat{name=\section,numberless}
+  %%{\scshape\bfseries\normalsize}
+  %%{}
+  %%{0pt}
+  %%{\gdef\@section@title@{#1 (continued)}#1}
+%
+%\titlespacing{\section}
+  %{0pt}%indent
+  %{3ex plus 2ex minus 1ex}%headspace
+  %{1ex plus .5ex minus .5ex}
+	%
+	%%\let\@section@title@\relax% Sectional heading storage
+%\def\print@section@title@{%
+  %{\noindent\scshape\bfseries\normalsize\@section@title@}\par\vspace{1ex plus .5ex minus .5ex}%
+%}
+%%\EveryShipout{%
+  %%\ifdim\pagetotal>\pagegoal% There is content overflow on this page
+    %%\aftergroup\print@section@title@% Reprint/-insert sectional heading
+  %%\fi%
+%%}
+%\makeatother
