@@ -18,6 +18,12 @@ git submodule init
 git submodule update
 ````
 
+or
+
+````
+git clone --recursive https://github.com/jonlighthall/latex.git
+````
+
 ### SVN
 To check out a particular folder, use the following command
 `svn co https://github.com/jonlighthall/latex.git/trunk/<dir> <name>`
