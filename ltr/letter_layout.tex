@@ -32,22 +32,20 @@
 \hypersetup{urlcolor=blue}
 \fi
 
+
+%%-----------------------------------------------------------------------------------------------
+%% Addresses
+%%-----------------------------------------------------------------------------------------------
 \newcommand{\addressprefix}{}
 
+%% Westmont----------------------%-------------------------------
 \newcommand{\homeaddress}{%
 816 S. Adams St. Apt. C305, Westmont, IL 60559-3606\\%
-%\href{mailto:jonathan.c.lighthall@wmich.edu}{jonathan.c.lighthall@wmich.edu}\\%
-%(248) 797-3674\\%
 }
 
-\renewcommand{\homeaddress}{%
-13--6395 Hawthorn Lane\\ Vancouver, BC\hspace{6pt}V6T~OC1
-\\Canada
-}
-
-\renewcommand{\homeaddress}{%
-1833 Halstead Blvd Apt 909\\
-Tallahassee, FL 32309-3474
+\newcommand{\addresssuffix}{\\
+\href{mailto:jonathan.c.lighthall@wmich.edu}{jonathan.c.lighthall@wmich.edu}\\%
+(248) 797-3674\\%
 }
 
 \newcommand{\workaddress}{
@@ -60,19 +58,32 @@ Tallahassee, FL 32309-3474
 \end{tabular}
 }
 
+%% Vancouver---------------------%-------------------------------
+\renewcommand{\homeaddress}{%
+13--6395 Hawthorn Lane\\ Vancouver, BC\hspace{6pt}V6T~OC1
+\\Canada
+}
+
 \renewcommand{\workaddress}{TRIUMF\\
 4004 Wesbrook Mall, 
 Vancouver, BC\hspace{6pt}V6T~2A3,
 Canada
 }
 
-\newcommand{\addresssuffix}{\\
+\renewcommand{\addresssuffix}{\\
 office: (604) 222-1047 ext. 6859
 | cell: (778) 999-6006\\
 \href{mailto:lighthall@triumf.ca}{lighthall@triumf.ca}\\%
 }
 
-\renewcommand{\workaddress}{Louisiana State University}
+%% Tallahassee-------------------%-------------------------------
+\renewcommand{\homeaddress}{%
+1833 Halstead Blvd Apt 909\\
+Tallahassee, FL 32309-3474
+}
+
+\renewcommand{\workaddress}{Louisiana State University\\
+Department of Physics \& Astronomy}
 
 \renewcommand{\addresssuffix}{\\
 \href{mailto:lighthall@lsu.edu}{lighthall@lsu.edu} | (850) 524-8336\\%
