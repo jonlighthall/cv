@@ -8,8 +8,13 @@
 
 \graphicspath{{../ltr/signatures/}{../../ltr/signatures/}}
 
+\def\reducemargin{0.25in}%text width is set to 6.25in with 1.25" margin
+\addtolength{\textwidth}{\reducemargin}		
+\addtolength{\hoffset}{-\reducemargin} 
+
 \newcommand{\boldtext}[1]{\textbf{\scshape\normalsize#1}}
 \newcommand{\desctext}[1]{\textit{\normalsize#1}}
+\newcommand{\headtext}[1]{\textit{\normalsize#1}}
 
 \renewcommand{\nameaddress}[1]{
 \boldtext{\printname}\\
@@ -97,7 +102,7 @@
 \newcommand{\cvwrapper}[3] {%three arguments: pagestyle, right header, text
 \clearpage
 \pagestyle{#1}
-\rhead{\desctext{#2}}
+\rhead{\headtext{#2}}
 %\rhead{\textbf{#2}}
 \phantomsection
 \addcontentsline{toc}{chapter}{#2}
@@ -118,6 +123,46 @@ To Whom It May Concern at \recip,\\
 
 #3\\
 \sign{}
+}
+
+%%-----------------------------------------------------------------------------------------------
+%% Builing commands
+%%-----------------------------------------------------------------------------------------------
+\newcommand{\cvonly}{%Generate a stand-alone CV
+\addcontentsline{toc}{chapter}{Contact Information}
+\input{cv_body}
+}
+
+\newcommand{\includepubs}{%
+%% Set automatic publication list filters here
+\renewcommand{\heliosonly}[1]{}
+%\renewcommand{\jclonly}[1]{}
+%% Include publication lists here
+\input{cv_pubs}
+\input{cv_talks}
+}
+
+\newcommand{\cvandpubs}{%Create CV and publication list as one document
+\cvonly
+%\rhead{\headtext{\docsubtitle}}
+\includepubs
+}
+
+\newcommand{\docsubtitle}{Publication List}
+\newcommand{\cvandpubsbreak}{%Insert a page break between CV and publication list
+\cvonly
+\newpage
+\rhead{\headtext{\docsubtitle}}
+\includepubs
+}
+
+\newcommand{\publistonly}{%Generate a stand-alone publication list
+\renewcommand{\doctitle}{\shortname~\docsubtitle}
+\hypersetup{pdftitle=\doctitle} 
+\pagestyle{fancy}
+\lhead{\boldtext{\shortname}}
+\rhead{\headtext{\docsubtitle}}
+\includepubs
 }
 
 %\usepackage[explicit]{titlesec}
