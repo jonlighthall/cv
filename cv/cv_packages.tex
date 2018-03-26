@@ -103,7 +103,6 @@
 \clearpage
 \pagestyle{#1}
 \rhead{\headtext{#2}}
-%\rhead{\textbf{#2}}
 \phantomsection
 \addcontentsline{toc}{chapter}{#2}
 \begin{changemargin}{\indent}
@@ -115,14 +114,29 @@
 \vspace*{2.0\baselineskip}%triple space
 \noindent \recip{} \comp{}\\
 \recipaddress{}
-\vspace*{1.0\baselineskip}%triple space
+\vspace*{1.0\baselineskip}%double space
 
 \noindent
 To Whom It May Concern at \recip,\\
 %Dear \recip,\\
 
-#3\\
+#3\vspace*{1.0\baselineskip}%double space
 \sign{}
+}
+
+\newcommand{\cvwrappersimple}[3] {%three arguments: pagestyle, right header, text
+\clearpage
+\pagestyle{#1}
+\rhead{\headtext{#2}}
+\phantomsection
+\addcontentsline{toc}{chapter}{#2}
+\begin{changemargin}{\indent}
+\nameaddress{\workaddress}\\
+\\
+\displaydate{letterdate}
+\end{changemargin}
+\vspace*{2.0\baselineskip}%triple space
+#3\vspace*{1.0\baselineskip}%double space
 }
 
 %%-----------------------------------------------------------------------------------------------
