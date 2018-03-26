@@ -124,6 +124,33 @@ To Whom It May Concern at \recip,\\
 \sign{}
 }
 
+\newcommand{\cvheader}[2] {%two arguments: pagestyle, right header
+\clearpage
+\pagestyle{#1}
+\rhead{\headtext{#2}}
+\phantomsection
+\addcontentsline{toc}{chapter}{#2}
+\begin{changemargin}{\indent}
+\nameaddress{\workaddress}\\
+\\
+\displaydate{letterdate}
+\end{changemargin}
+
+\vspace*{2.0\baselineskip}%triple space
+\noindent \recip{} \comp{}\\
+\recipaddress{}
+\vspace*{1.0\baselineskip}%triple space
+
+\noindent
+To Whom It May Concern at \recip,\\
+%Dear \recip,\\
+
+}
+
+\newcommand{\cvfooter}{\vspace*{1.0\baselineskip}
+\sign{}
+}
+
 \newcommand{\cvwrappersimple}[3] {%three arguments: pagestyle, right header, text
 \clearpage
 \pagestyle{#1}
@@ -137,6 +164,23 @@ To Whom It May Concern at \recip,\\
 \end{changemargin}
 \vspace*{2.0\baselineskip}%triple space
 #3\vspace*{1.0\baselineskip}%double space
+}
+
+\newcommand{\cvheadersimple}[2] {%two arguments: pagestyle, right header,
+\clearpage
+\pagestyle{#1}
+\rhead{\headtext{#2}}
+\phantomsection
+\addcontentsline{toc}{chapter}{#2}
+\begin{changemargin}{\indent}
+\nameaddress{\workaddress}\\
+\\
+\displaydate{letterdate}
+\end{changemargin}
+\vspace*{2.0\baselineskip}
+}
+
+\newcommand{\cvfootersimple}{\vspace*{1.0\baselineskip}
 }
 
 %%-----------------------------------------------------------------------------------------------
