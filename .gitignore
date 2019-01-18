@@ -1,5 +1,5 @@
 ## LaTeX
-## Auxiliary files:
+## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
 *.log
@@ -16,6 +16,12 @@
 ## Intermediate documents:
 *.dvi
 *-converted-to.*
+
+## Output
+# these rules might exclude image files for figures etc.
+# *.ps
+# *.eps
+# *.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
@@ -34,5 +40,7 @@
 *~
 \#*#
 
-##Git previous file versions
+##Git 
 *.~*~
+**/.git
+*/.gitignore
