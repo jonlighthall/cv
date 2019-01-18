@@ -42,5 +42,5 @@
 
 ##Git 
 *.~*~
-**/.git
-*/.gitignore
+src/.git
+src/.gitignore
