@@ -183,15 +183,15 @@ To Whom It May Concern at \recip,\\
 \newcommand{\cvfootersimple}{\vspace*{1.0\baselineskip}
 }
 
-\newcommand{\objective}[1]{
+\newcommand{\objective}[2]{
 \phantomsection
-\addcontentsline{toc}{chapter}{Objective}
+\addcontentsline{toc}{chapter}{#1}
 \vspace*{-2\baselineskip}
-\section*{Objective}
+\section*{#1}
 \begin{changemargin}{15pt}%
 %\pangram{20}
 %\hspace{6pt}
-#1
+#2
 \end{changemargin}
 }
 
