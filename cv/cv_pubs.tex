@@ -26,9 +26,18 @@
 	\nocite{\jclonly{		Tur_2008}}%	
 	\nocite{\heliosonly{Wuosmaa_2007}}%
 
+\IfFileExists{../src/bib_link}{
+\bibliographystyle{../src/elsarticle-aps} 
+\phantomsection
+\addcontentsline{toc}{chapter}{Publications}
+\phantomsection
+\addcontentsline{toc}{section}{\refname}
+\bibliography{../src/bib_link}
+}{%for Overleaf
 \bibliographystyle{src/elsarticle-aps} 
 \phantomsection
 \addcontentsline{toc}{chapter}{Publications}
 \phantomsection
 \addcontentsline{toc}{section}{\refname}
 \bibliography{src/bib_link}
+}

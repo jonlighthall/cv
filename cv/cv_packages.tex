@@ -235,6 +235,17 @@ To Whom It May Concern at \recip,\\
 \includepubs
 }
 
+\newcommand{\helios}{%
+\renewcommand{\shortname}{HELIOS}
+\renewcommand{\doctitle}{\shortname~\docsubtitle}
+\renewcommand{\jclonly}[1]{}
+\hypersetup{pdftitle=\doctitle} 
+\pagestyle{fancy}
+\lhead{\boldtext{\shortname}}
+\rhead{\headtext{\docsubtitle}}
+\includepubs
+}
+
 %\usepackage[explicit]{titlesec}
 %\usepackage{everyshi}% http://ctan.org/pkg/everyshi
 %\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
