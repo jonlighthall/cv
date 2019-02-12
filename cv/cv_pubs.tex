@@ -1,5 +1,5 @@
 %% Listed here are journal publications only.  Conference proceedings are found in talks.tex
-\renewcommand{\refname}{Journal Publications} 
+%  Listed in order of publication
     \nocite{                Davids_2019}   
 	\nocite{\jclonly{       Randhawa_2019}}
 	\nocite{\jclonly{       Tanaka_2017}}%10 Nov 2017
@@ -26,18 +26,10 @@
 	\nocite{\jclonly{		Tur_2008}}%	
 	\nocite{\heliosonly{    Wuosmaa_2007}}%
 
-\IfFileExists{../src/bib_link}{
-\bibliographystyle{../src/elsarticle-aps} 
+\renewcommand{\refname}{Journal Publications} 
+\IfFileExists{../src/bib_link}{\bibliographystyle{../src/elsarticle-aps}}{\bibliographystyle{src/elsarticle-aps}}
 \phantomsection
 \addcontentsline{toc}{chapter}{Publications}
 \phantomsection
 \addcontentsline{toc}{section}{\refname}
-\bibliography{../src/bib_link}
-}{%for Overleaf
-\bibliographystyle{src/elsarticle-aps} 
-\phantomsection
-\addcontentsline{toc}{chapter}{Publications}
-\phantomsection
-\addcontentsline{toc}{section}{\refname}
-\bibliography{src/bib_link}
-}
+\IfFileExists{../src/bib_link}{\bibliography{../src/bib_link}}{\bibliography{src/bib_link}}
