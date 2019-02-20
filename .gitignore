@@ -1,5 +1,5 @@
-## LaTeX
-## Core latex/pdflatex auxiliary files:
+# LaTeX
+# Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
 *.log
@@ -7,27 +7,27 @@
 *.out
 *.toc
 
-## Project files:
+# Project files:
 *.tcp
 *.tps
 *.texnicle
 *.texnicle.backup
 
-## Intermediate documents:
+# Intermediate documents:
 *.dvi
 *-converted-to.*
 
-## Output
+# Output
 # these rules might exclude image files for figures etc.
 # *.ps
 # *.eps
 # *.pdf
 
-## Bibliography auxiliary files (bibtex/biblatex/biber):
+# Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
 *.blg
 
-## Build tool auxiliary files:
+# Build tool auxiliary files:
 *.synctex
 *.synctex(busy)
 *.synctex.gz
@@ -36,11 +36,11 @@
 # elsarticle (documentclass of Elsevier journals)
 *.spl
 
-## Emacs
+# Emacs
 *~
 \#*#
 
-##Git 
+# Git 
 *.~*~
-src/.git
+**/.git
 src/.gitignore
