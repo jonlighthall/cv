@@ -10,15 +10,18 @@
 %\renewcommand{\desc}[1]{}%turn off
 \renewcommand{\desctext}[1]{#1}%no formatting
 %\renewcommand{\desctext}[1]{\textrm{\small#1}}%small font
-%\renewcommand{\extra}[1]{}
+\renewcommand{\extra}[1]{}
 
+%%-----------------------------------------------------------------------------------------------
+\extra{
 \begin{center}
-    \extra{Not for publication. Superfluous items printed in gray.\\}
+    Not for publication. Superfluous items printed in gray.\\
 \end{center}
+\vspace*{2\baselineskip}
+}
 %%-----------------------------------------------------------------------------------------------
 \extra{%
 \objective{Personal Information}{%
-%\addcontentsline{toc}{section}{Personal Information}
 %\begin{quote}
 %  \setlength{\itemsep}{0pt}
 %  \setlength{\parskip}{0pt}
@@ -27,11 +30,11 @@ Born October 7$^{\textrm{th}}$, 1981 in Ann Arbor, Michigan.\\
 U.S. citizen.\\
 Married to Holly Lighthall.\\
 %\end{quote}
-\phantomsection
+%\pangram{20}
 }
+\vspace*{1\baselineskip}
 }
 %%-----------------------------------------------------------------------------------------------
-
 %\renewcommand{\objective}[2]{}%no objective
 \objective{Objective}{%
 I am looking to use my skills and  %collaboration skills and 
@@ -54,6 +57,7 @@ and working with diverse collaborations to report and evaluate the analysis and 
 I am interested in leveraging my education, experience, and skills to help further the practical research and development at NRL
 and transition the results into operational use.
 }
+%%-----------------------------------------------------------------------------------------------
 \phantomsection
 \addcontentsline{toc}{chapter}{Curriculum Vit\ae}
 %\vspace*{-1\baselineskip}
@@ -69,7 +73,7 @@ and transition the results into operational use.
       \extra{\\Graduation ceremony on June 25, 2011; started August 30, 2004 (7 years, 6.9 calendar years) Age 22--29}
 	  \desc{Dissertation: \href{http://scholarworks.wmich.edu/dissertations/432}{Commissioning of the Helical Orbit Spectrometer: A new device for measuring nuclear reactions in inverse kinematics
 	}}
-	\item B.A. in Physics and Applied Mathematics, Albion College, May 2004 \extra{\\ Graduated May 8, 2004, started August 28, 2000 (4 school years, 4+7=11 years total) Age 18--22\\3.21 GPA overall}%
+	\item B.A. in Physics and Applied Mathematics, Albion College, May 2004 \extra{\\ Graduated May 8, 2004, started August 28, 2000 (4 school years, 4+7=11 years out of high school) Age 18--22\\3.21 GPA overall}%
 	\extra{\item High School Diploma, Seaholm High School, June 2000} \extra{\\1996--2000, 9$^\textrm{th}$--12$^\textrm{th}$ grade, (4 school years, 4+4+7=15 years total) Age 14--18}
 	\extra{\item Derby Middle School 1993--1996} \extra{\\6$^\textrm{th}$--8$^\textrm{th}$ grade (3 school years, 3+4+4+7=18) Age 11--15}
 	\extra{\item Harlan Elementary School 1987--1993} \extra{\\Kindergarten and 1$^\textrm{st}$--5$^\textrm{th}$ grade (6 school years, 6+3+4+4+7=24) Age 5--11}
@@ -86,8 +90,9 @@ and transition the results into operational use.
 \section*{Research Experience}
 \addcontentsline{toc}{section}{Research Experience}
 \begin{itemize}
-	\item Research Physicist, U.S. Naval Research Laboratory, Acoustics Simulations, Measurements and Tactics Branch, October 2018---Present
-	    \desc{Develop software for acoustic simulation (FORTRAN, Node.js, Python).}
+	\item Research Physicist, U.S. Naval Research Laboratory, Acoustics Division %Simulations, Measurements and Tactics Branch
+	, October 2018---Present
+	    \desc{Develop software for acoustic simulation (Fortran, MATLAB).}
 	\item Senior Postdoctoral Researcher, Department of Physics \& Astronomy, Louisiana State University\\ (C.\ Deibel), May 2016---October 2018
 		\desc{Visiting Researcher at Florida State University.
 		Principle investigator for the $^{17}$F($\alpha$,$p$) measurement using  the ANASEN detector. 
@@ -134,7 +139,7 @@ and transition the results into operational use.
 		 }
 	%\pagebreak[0] \section*{\hspace{-1.25em} Research Experience (continued)}	
 	\item Research Assistant, Physics Department, WMU (A.\ Wuosmaa), August 2004--June 2007
-	\extra{\\Associated and supervised August 2004--June 2011 \$10,573 for 2006 \$13798.40?}
+	\extra{\\Associated and supervised August 2004--June 2011 \$10,573 for 2006 \$13,798.40?}
 		\desc{In addition to work at Argonne---collaborated on experiments using the tandem Van de Graaff accelerator
 		%with the goal of improving the pair production branching ratio of the Holye State in $^{12}$C. 
 		 including NIM electronics setup, data acquisition and analysis (SpecTcl), and accelerator operation.
