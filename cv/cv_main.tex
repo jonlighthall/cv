@@ -10,6 +10,7 @@
 %%-----------------------------------------------------------------------------------------------
 %% Document construction
 %%-----------------------------------------------------------------------------------------------
+
 \cfoot{\thepage{} of \pageref{LastPage}}
 %% Select document type here
 %\cvonly
@@ -18,5 +19,9 @@
 %\publistonly
 %\helios
 \rfoot{\smalltimestamp}
+	\ifunabridged
+		\else
+		\lfoot{Abridged (November 2010--Present)}
+		\fi
 %\input{layout_table}
 \end{document}

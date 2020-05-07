@@ -212,15 +212,15 @@ citecolor=black,               %makes citation links black (instead of green)
 %  Time zone definitions, for the command \timezone.
 % Requires latexmkrc file on Overleaf
 \makeatletter
-%\@namedef{timezone-0400}{EDT}
-%\@namedef{timezone-0500}{CDT}
-%\@namedef{timezone-0600}{MDT}
-%\@namedef{timezone-0700}{PDT}
+\@namedef{timezone-0400}{EDT}
+\@namedef{timezone-0500}{CDT}
+\@namedef{timezone-0600}{MDT}
+\@namedef{timezone-0700}{PDT}
 
-\@namedef{timezone-0500}{EST}
-\@namedef{timezone-0600}{CST}
-\@namedef{timezone-0700}{MST}
-\@namedef{timezone-0800}{PST}
+%\@namedef{timezone-0500}{EST}
+%\@namedef{timezone-0600}{CST}
+%\@namedef{timezone-0700}{MST}
+%\@namedef{timezone-0800}{PST}
 
 \def\grabtimezone #1#2#3#4#5#6#7#8#9{\grabtimezoneB}
 \def\grabtimezoneB #1#2#3#4#5#6#7{\grabtimezoneC}

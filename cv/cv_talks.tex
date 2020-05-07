@@ -48,11 +48,13 @@
 \nocitetalk{Wuosmaa_2010DNP} %15:12 Friday, November 5, 2010	
 \nocitetalk{Kay_2010} %11:18 Thursday, November 4, 2010
 \nocitetalk{Back_2010DNP} %10:06 Thursday, November 4, 2010
-\nocitetalk{Lee_2010DNP} %09:18 Thursday, November 4, 2010 (withdrawn)
+%\nocitetalk{Lee_2010DNP} %09:18 Thursday, November 4, 2010 (withdrawn)
+\ifunabridged
 \nociteproc{\jclonly{Deibel_2010}} %11:30 Thusday, July 22, 2010
  %Kay_2010IOP, %14:55 Thursday, July 8, 2010
 \nociteproc{\heliosonly{Clark_2010}} % May, 2010
 \nociteinvi{Lighthall_2010SLM} % May 19, 2010
+%\ifunabridged	
 \nocitetalk{Kay_2010APS} % April 2010
 \nociteproc{Back_2009} %10:50 Monday, October 5, 2009	
 \nociteproc{Back_2009Big} %19:15 Wednesday, February 4, 2009
@@ -78,20 +80,28 @@
 \nociteproc{\heliosonly{Wuosmaa_2003}} %September 2003
 \nociteproc{\heliosonly{Schiffer_1999}}
 %\nociteproc{\heliosonly{Schiffer_1998}}
+\fi
 
-\renewcommand{\refnameproc}{Conference Proceedings} 
+\ifunabridged
+\newcommand{\abridgedname}{}
+\else
+\newcommand{\abridgedname}{ (recent)}
+\fi
+\renewcommand{\abridgedname}{}
+
+\renewcommand{\refnameproc}{Conference Proceedings\abridgedname}
 \bibliographystyleproc{src/elsarticle-aps} 
 \phantomsection
 \addcontentsline{toc}{section}{\refnameproc}
 \bibliographyproc{src/bib_link}
 
-\renewcommand{\refnameinvi}{Invited Talks} 
+\renewcommand{\refnameinvi}{Invited Talks\abridgedname} 
 \bibliographystyleinvi{src/elsarticle-aps} 
 \phantomsection 
 \addcontentsline{toc}{section}{\refnameinvi}
 \bibliographyinvi{src/bib_link}
 
-\renewcommand{\refnametalk}{Contributed Abstracts}
+\renewcommand{\refnametalk}{Contributed Abstracts\abridgedname}
 \bibliographystyletalk{src/elsarticle-aps} 
 \phantomsection 
 \addcontentsline{toc}{section}{\refnametalk}
