@@ -1,4 +1,4 @@
-# latex
+# CV
 ## Contents
 ### cv
 Ciriculum Vitae
@@ -6,14 +6,12 @@ Ciriculum Vitae
 Letter Template
 ### src
 Default packages, macros, and bibliography.
-### wmu
-Western Michigan University thesis template.
 
 ## Installation
 ### Git
 To check out the entire repository, use the following commands
 ````
-git clone https://github.com/jonlighthall/latex.git
+git clone https://github.com/jonlighthall/cv.git
 git submodule init
 git submodule update
 ````
@@ -21,12 +19,12 @@ git submodule update
 or
 
 ````
-git clone --recursive https://github.com/jonlighthall/latex.git
+git clone --recursive https://github.com/jonlighthall/cv.git
 ````
 
 ### SVN
 To check out a particular folder, use the following command
-`svn co https://github.com/jonlighthall/latex.git/trunk/<dir> <name>`
+`svn co https://github.com/jonlighthall/cv.git/trunk/<dir> <name>`
 
 ## Submodules
 to update the submodules, use the command
