@@ -1,7 +1,7 @@
 %\IfFileExists{multibib.bat}{}{\errmessage{Batch file for multibib not found}}
 %% All publications, other than journal articles, are listed below.
 %  Listed in order of talk given.  Entries that are commented-out were withdrawn.
-%\nocitetalk{Ahn_2020} %2020
+%\nocitetalk{Ahn_2020} %2020 (canceled)
 \nocitetalk{Anastasiou_2019} %09:42 Wednesday, October 16, 2019
 \nocitetalk{Hanselman_2019} %12:21 Monday, April 15,2019
 \nocitetalk{Ingo_2018} %14:45 Saturday, October 27, 2018
@@ -34,6 +34,9 @@
 \nocitetalk{Marley_2011}% 11:30  Thursday, October 27, 2011
 \nocitetalk{Hoffman_2011}% 9:18 Thursday, October 27, 2011
 \nocitetalk{Lee_2011}% 11:18 Thursday, October 27, 2011
+\newcommand{\abridgedfoot}{Abridged Oct 2011--Present}
+\ifunabridged
+\nocitetalk{Wuosmaa_2010DNP} %15:12 Friday, November 5, 2010	
 \nociteproc{Sharp_2012}%August 8-12, 2011
 \nociteproc{Kay_2012} %August 8-12, 2011
 \nociteproc{Back_2011FUS}   %14:30 Friday, May 6th, 2011 (pub October 19, 2011)
@@ -45,16 +48,16 @@
 \nociteproc{Kay_2010IOP} %14:55 Thursday, July 8, 2010
 \nociteproc{Back_2010DAE} %14:30 December 20, 2010
 \nocitetalk{Kay_2010MAG} % December 16, 2010
+%\newcommand{\abridgedfoot}{Abridged Dec 2010--Present}
+%\ifunabridged
 \nocitetalk{Wuosmaa_2010DNP} %15:12 Friday, November 5, 2010	
 \nocitetalk{Kay_2010} %11:18 Thursday, November 4, 2010
 \nocitetalk{Back_2010DNP} %10:06 Thursday, November 4, 2010
 %\nocitetalk{Lee_2010DNP} %09:18 Thursday, November 4, 2010 (withdrawn)
-\ifunabridged
-\nociteproc{\jclonly{Deibel_2010}} %11:30 Thusday, July 22, 2010
+\nociteproc{\jclonly{Deibel_2010}} %11:30 Thursday, July 22, 2010
  %Kay_2010IOP, %14:55 Thursday, July 8, 2010
 \nociteproc{\heliosonly{Clark_2010}} % May, 2010
 \nociteinvi{Lighthall_2010SLM} % May 19, 2010
-%\ifunabridged	
 \nocitetalk{Kay_2010APS} % April 2010
 \nociteproc{Back_2009} %10:50 Monday, October 5, 2009	
 \nociteproc{Back_2009Big} %19:15 Wednesday, February 4, 2009
@@ -85,11 +88,17 @@
 \ifunabridged
 \newcommand{\abridgedname}{}
 \else
-\newcommand{\abridgedname}{ (recent)}
+\newcommand{\abridgedname}{ (abridged)}
 \fi
-\renewcommand{\abridgedname}{}
+%\renewcommand{\abridgedname}{}
 
 \renewcommand{\refnameproc}{Conference Proceedings\abridgedname}
+\rfoot{\smalltimestamp}
+	\ifunabridged
+		\else
+		\lfoot{\abridgedfoot}
+		\rfoot{}
+		\fi
 \bibliographystyleproc{src/elsarticle-aps} 
 \phantomsection
 \addcontentsline{toc}{section}{\refnameproc}
