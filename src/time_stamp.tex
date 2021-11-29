@@ -1,10 +1,65 @@
-%% This file prints the time of compiling.
-%  Requires package datetime.
-%  Requires the following commands to be defined: longusedate, timezone, changemargin
-%  The prerequisite commands are defined in packages.tex
-%  Note: the timezone command requires latexmkrc file on Overleaf
+%% Date settings-----------------%-------------------------------
+%  This file provides definitions and commands to prints the time of
+%  compiling.
 
-%\nopagebreak[4]
+% dependencies
+\usepackage{datetime} % provides commands for displaying times and dates
+\usepackage{setspace} % needed to change margins
+
+% Time zone definitions, for the command \timezone.
+% On Overleaf, the timezone command requires a file named latexmkrc with
+% the following contents
+% #$ENV{'TZ'}='America/Detroit';
+% $ENV{'TZ'}='America/Chicago';
+% #$ENV{'TZ'}='America/Denver';
+% #$ENV{'TZ'}='America/Vancouver';
+
+\makeatletter
+\newif\ifdst
+% set daylight saving time
+\dstfalse
+% set time zone names
+\ifdst
+  \@namedef{timezone-0400}{EDT}
+  \@namedef{timezone-0500}{CDT}
+  \@namedef{timezone-0600}{MDT}
+  \@namedef{timezone-0700}{PDT}
+\else
+  \@namedef{timezone-0500}{EST}
+  \@namedef{timezone-0600}{CST}
+  \@namedef{timezone-0700}{MST}
+  \@namedef{timezone-0800}{PST}
+\fi
+\def\grabtimezone #1#2#3#4#5#6#7#8#9{\grabtimezoneB}
+\def\grabtimezoneB #1#2#3#4#5#6#7{\grabtimezoneC}
+\def\grabtimezoneC #1#2'#3'{%
+  \@ifundefined{timezone#1#2#3}
+    {No timezone for `#1#2#3'}
+    {\@nameuse{timezone#1#2#3}}%
+}
+\def\timezone{\expandafter\grabtimezone\pdfcreationdate}% called with \timezone.
+\makeatother
+
+% Date formats
+\newdateformat{photodate}{\shortmonthname[\THEMONTH]~\THEYEAR}
+\newdateformat{longusdate}{%standard long date format
+\dayofweekname{\THEDAY}{\THEMONTH}{\THEYEAR}, \monthname[\THEMONTH] \ordinal{DAY}, \THEYEAR}
+\newdateformat{shortusdate}{%standard short date format
+\shortdayofweekname{\THEDAY}{\THEMONTH}{\THEYEAR}, \shortmonthname[\THEMONTH] \ordinal{DAY}, \THEYEAR}
+\newdateformat{reallyshortusdate}{%standard short date format
+\THEYEAR-\THEMONTH-\THEDAY}
+
+% Time stamps
+\newcommand{\smalltimestamp}{Updated \shortusdate\today{} \currenttime{} \timezone.}
+\newcommand{\reallysmalltimestamp}{\reallyshortusdate\today{} \currenttime{} \timezone}
+\newcommand{\timestamp}{%
+At the time of compiling, today is \longusdate\today{} and the current time is \currenttime{} 
+\ifthenelse{\THEHOUR<12}{{}(\amstring) }{%
+\ifthenelse{\THEHOUR=12}{{}(\pmstring) }{}}% 
+\timezone.%
+}
+% The following command may be used on its own or use within \AtEndDocument{}
+\newcommand{\terminaltimestamp}{%
 %\AtEndDocument{
 %% The need to include one of the following two lines may be system dependent.
 %\pagebreak % use if float(s) on last page 
@@ -15,11 +70,19 @@
       \fi
 \makeatother
 
-   \begin{singlespace}
-         \begin{center}
-           \rule[0 pt]{\linewidth}{0.5pt}\\	
-             \textit{(end of document)}\\
-      \vspace*{\fill}
+%% The following command allows the margins to be reduced by the following amount. Used for indenting regions.
+\newenvironment{changemargintt}[1]{%
+\begin{list}{}{%
+\setlength{\leftmargin}{##1}%
+\setlength{\rightmargin}{##1}%
+}
+\item[]}{\end{list}}
+\begin{singlespace}
+    \begin{center}
+\vspace{-2\baselineskip}
+        \rule[0 pt]{\linewidth}{0.5pt}\\	
+        \textit{(end of document)}\\
+        \vspace*{\fill}
 %\vspace*{\stretch{1}}
 %\begin{figure*}[h]%
 %\centering
@@ -27,19 +90,26 @@
 %\end{figure*}
 %\input{colophon}
 %\vspace*{\stretch{1}}
-%\input{src/time_stamp}
-\begin{changemargin}{-\marginparwidth}%
-{%\footnotesize
-\begin{center}
-At the time of compiling, today is \longusdate\today{} and the current time is \currenttime{} 
-\ifthenelse{\THEHOUR<12}{{}(\amstring) }{%
-\ifthenelse{\THEHOUR=12}{{}(\pmstring) }{}}% 
-\timezone.%
-%%\\\enlargethispage{\baselineskip}{\color{white}Document designed by Jonathan C. Lighthall}
-\end{center}
-}
-\end{changemargin}
-\end{center}
+        \begin{changemargintt}{-\marginparwidth}%
+            {%\footnotesize
+                \begin{center}
+                    \timestamp
+                    %%\\\enlargethispage{\baselineskip}{\color{white}Document designed by Jonathan C. Lighthall}
+                \end{center}
+            }
+        \end{changemargintt}
+    \end{center}
 \end{singlespace}
 %\marginpar{\color{white}\texttt{J/\textbackslash C\textbar\textless @L}}
 %}
+}
+
+\newcommand{\terminaltimestamps}{
+\singlespace
+\centering
+\setlength{\parindent}{0pt}
+\rule[0 pt]{\linewidth}{0.125pt}
+\textit{(end of document)}
+\vspace*{\fill}
+\\\timestamp
+}
