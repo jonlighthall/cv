@@ -1,0 +1,19 @@
+\usepackage{everyshi}% http://ctan.org/pkg/everyshi
+\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+\makeatletter
+\let\@section@title@\relax% Sectional heading storage
+\patchcmd{\@sect}% <cmd>
+  {\@xsect}% <search>
+  {\gdef\@section@title@{% Store sectional heading
+%    {\noindent#6\@svsec#8\ \smash{(continued)}\normalfont}\par\bigskip}\@xsect}% <replace>
+    {\noindent#6\@svsec#8\ \smash{(continued)}\normalfont}\par\bigskip}\@xsect}% <replace>
+  {}{}% <success><failure>
+\EveryShipout{%
+  \ifdim\pagetotal>\pagegoal% There is content overflow on this page
+    \aftergroup\@section@title@% Reprint/-insert sectional heading
+  \fi%
+}
+
+% mimic unnumbered sectional headings
+%\renewcommand{\@seccntformat}[1]{}
+\makeatother
