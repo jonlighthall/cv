@@ -1341,7 +1341,10 @@ FUNCTION {format.url}
 FUNCTION {format.eprint}
 { eprint empty$
     { "" }
-    { eprintprefix eprint * eprinturl eprint * make.href }
+    { eprintprefix eprint * eprinturl eprint * make.href 
+
+
+}
   if$
 }
 
@@ -1368,7 +1371,11 @@ FUNCTION {output.web.refs}
   new.block
   output.url
   addeprints eprint empty$ not and
-    { format.eprint output.nonnull }
+    { format.eprint 
+      mid.sentence 'output.state := 
+    output.nonnull.original
+    after.block 'output.state := 
+      }
     'skip$
   if$
   adddoiresolver doi empty$ not and
@@ -1797,7 +1804,7 @@ FUNCTION {begin.bib}
   write$ newline$
   "\expandafter\ifx\csname url\endcsname\relax"
   write$ newline$
-  "  \def\url#1{\texttt{#1}}\fi"
+   "  \def\url#1{\texttt{#1}}\fi"
   write$ newline$
   "\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi"
   write$ newline$

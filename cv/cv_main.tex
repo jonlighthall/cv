@@ -4,9 +4,11 @@
 \input{src/packages}
 %\input{cv_formatting}
 \input{cv_packages}
+\input{src/time_stamp}
 %\def\reducemargin{0.0in}
 %\addtolength{\textwidth}{\reducemargin}		
-%\addtolength{\hoffset}{-\reducemargin} 
+%\addtolength{\hoffset}{-\reducemargin}
+
 \begin{document}
 %%-----------------------------------------------------------------------------------------------
 %% Document construction
@@ -19,10 +21,22 @@
 %\cvandpubsbreak
 %\publistonly
 %\helios
+
+% \makeatletter
+% \def\myrev{Next Review Date:}
+% \def\ps@lastpage{%
+%   \let\@oddhead\@empty\let\@evenhead\@empty%
+%   \def\@oddfoot{{\slshape\myrev}\hfil\thepage}%
+%   \def\@evenfoot{{\slshape\myrev}\hfil\thepage}%
+%   }
+% \makeatother
+
+
+% \AtEndDocument{
 \rfoot{\smalltimestamp}
-	\ifunabridged
-		\else
-		\lfoot{\abridgedfoot}
-		\fi
-%\input{layout_table}
+
+% %\input{layout_table}
+% }
+%\thispagestyle{lastpage}
+
 \end{document}

@@ -90,15 +90,8 @@
 \else
 \newcommand{\abridgedname}{ (abridged)}
 \fi
-%\renewcommand{\abridgedname}{}
 
 \renewcommand{\refnameproc}{Conference Proceedings\abridgedname}
-\rfoot{\smalltimestamp}
-	\ifunabridged
-		\else
-		\lfoot{\abridgedfoot}
-		\rfoot{}
-		\fi
 \bibliographystyleproc{src/elsarticle-aps} 
 \phantomsection
 \addcontentsline{toc}{section}{\refnameproc}
@@ -115,3 +108,9 @@
 \phantomsection 
 \addcontentsline{toc}{section}{\refnametalk}
 \bibliographytalk{src/bib_link}
+
+\ifunabridged
+	\else
+		\thispagestyle{fancy}
+		\lfoot{\abridgedfoot}
+	\fi
