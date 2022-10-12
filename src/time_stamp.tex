@@ -17,7 +17,7 @@
 \makeatletter
 \newif\ifdst
 % set daylight saving time
-\DSTFALSE
+\dsttrue
 % set time zone names
 \ifdst
   \@namedef{timezone-0400}{EDT}
@@ -53,18 +53,18 @@
 \newcommand{\smalltimestamp}{Updated \shortusdate\today{} \currenttime{} \timezone.}
 \newcommand{\reallysmalltimestamp}{\reallyshortusdate\today{} \currenttime{} \timezone}
 \newcommand{\timestamp}{%
-At the time of compiling, today is \longusdate\today{} and the current time is \currenttime{} 
+At the time of compiling, today is \longusdate\today{} and the current time is \currenttime{}
 \ifthenelse{\THEHOUR<12}{{}(\amstring) }{%
-\ifthenelse{\THEHOUR=12}{{}(\pmstring) }{}}% 
+\ifthenelse{\THEHOUR=12}{{}(\pmstring) }{}}%
 \timezone.%
 }
 % The following command may be used on its own or use within \AtEndDocument{}
 \newcommand{\terminaltimestamp}{%
 %\AtEndDocument{
 %% The need to include one of the following two lines may be system dependent.
-%\pagebreak % use if float(s) on last page 
+%\pagebreak % use if float(s) on last page
 %\nopagebreak[4] % use if text on last page (if needed)
- \makeatletter 
+ \makeatletter
   \if@twocolumn
     \tiny
       \fi
@@ -80,7 +80,7 @@ At the time of compiling, today is \longusdate\today{} and the current time is \
 \begin{singlespace}
     \begin{center}
 \vspace{-2\baselineskip}
-        \rule[0 pt]{\linewidth}{0.5pt}\\	
+        \rule[0 pt]{\linewidth}{0.5pt}\\
         \textit{(end of document)}\\
         \vspace*{\fill}
 %\vspace*{\stretch{1}}

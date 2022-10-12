@@ -9,8 +9,8 @@
 \graphicspath{{../ltr/signatures/}{../../ltr/signatures/}}
 
 \def\reducemargin{0.25in}%text width is set to 6.25in with 1.25" margin
-\addtolength{\textwidth}{\reducemargin}		
-\addtolength{\hoffset}{-\reducemargin} 
+\addtolength{\textwidth}{\reducemargin}
+\addtolength{\hoffset}{-\reducemargin}
 
 \newcommand{\boldtext}[1]{\textbf{\scshape\normalsize#1}}
 \newcommand{\desctext}[1]{\textit{\normalsize#1}}
@@ -32,7 +32,7 @@
   pdftitle=\doctitle,            %Adds thesis title to PDF properties
   pdfstartpage=1,                %Opening page number (absolute)
   pdfstartview={XYZ null null 1},%view page at 100%
-	urlcolor=blue,                  
+	urlcolor=blue,
 }
 
 %% Bibliography packages---------%-------------------------------
@@ -45,6 +45,7 @@
 %% Then, define a new output profile (in TeXnicCenter) and enter the path of the new batch
 %% file in the Path to BibTex executable field.
 %\IfFileExists{multibib.bat}{}{\errmessage{Batch file for multibib not found}}
+\newcites{eprint}{E-Print}
 \newcites{talk}{Presentations}
 \newcites{proc}{Proceedings}
 \newcites{invi}{Invited Talks}
@@ -52,7 +53,7 @@
 %% Application/CV settings-------%-------------------------------
 \usepackage{lastpage}
 \usepackage{sectsty}
-\sectionfont{\boldtext} %use 
+\sectionfont{\boldtext} %use
 
 \newcommand{\heliosonly}[1]{#1}
 \newcommand{\jclonly}[1]{#1}
@@ -215,7 +216,6 @@ To Whom It May Concern at \recip,\\
 %% Include publication lists here
 \input{cv_pubs}
 \input{cv_talks}
-
 }
 
 \newcommand{\cvandpubs}{%Create CV and publication list as one document
@@ -234,7 +234,7 @@ To Whom It May Concern at \recip,\\
 
 \newcommand{\publistonly}{%Generate a stand-alone publication list
 \renewcommand{\doctitle}{\shortname~\docsubtitle}
-\hypersetup{pdftitle=\doctitle} 
+\hypersetup{pdftitle=\doctitle}
 \pagestyle{fancy}
 \lhead{\boldtext{\shortname}}
 \rhead{\headtext{\docsubtitle}}
@@ -245,7 +245,7 @@ To Whom It May Concern at \recip,\\
 \renewcommand{\shortname}{HELIOS}
 \renewcommand{\doctitle}{\shortname~\docsubtitle}
 \renewcommand{\jclonly}[1]{}
-\hypersetup{pdftitle=\doctitle} 
+\hypersetup{pdftitle=\doctitle}
 \pagestyle{fancy}
 \lhead{\boldtext{\shortname}}
 \rhead{\headtext{\docsubtitle}}

@@ -1,36 +1,53 @@
-%% Listed here are journal publications only.  Conference proceedings are found in talks.tex
-%  Listed in order of publication
-    \nocite{                Anastasiou_2021}   
-    \nocite{                Davids_2019}   
-	\nocite{\jclonly{       Randhawa_2019}}
-	\nocite{\jclonly{       Tanaka_2017}}%10 Nov 2017
-	\nocite{\jclonly{		Kumar_2017}}%28 June 2017
-	\nocite{				Bedoor_2016}%21 April 2016
-	\nocite{\jclonly{		Sanetullaev_2015}}%2 March 2016
-	\nocite{\jclonly{		Kirsebom_2016}}%2 February 2016
-	\nocite{\jclonly{		Kanungo_2015}}%12 May 2015
-	\nocite{				Wuosmaa_2015}%8 December 2014
-	\nocite{				Hoffman_2013}%October 15, 2013
-	\nocite{				Bedoor_2013}%July 29, 2013
-	\nocite{				Kay_2013}%March 2013
-	\nocite{				Sharp_2013}%January 10, 2013
-	\nocite{        		Hoffman_2012}%May 29, 2012
-	\nocite{\jclonly{		PMarley_2011}}%October 31, 2011
-	\nocite{\jclonly{		Deibel_2011}}%October 6, 2011
-	\nocite{				Kay_2011}%August, 2011
-	\nocite{\jclonly{		Alcorta_2011}}%28 April 2011
-	\nocite{				Wuosmaa_2010} %23 September 2010
-	\nocite{				Lighthall_2010} %
-	\nocite{				Schiffer_2010}%31 March 2010
-	\nocite{\jclonly{		Lee_2010}}%11 January 2010
-	\nocite{\jclonly{		Wuosmaa_2008}}%10 October 2008
-	\nocite{\jclonly{		Tur_2008}}%	
-	\nocite{\heliosonly{    Wuosmaa_2007}}%
+%% E-prints, preprints, and manuscripts
+\nociteeprint{Sun_2022} % 19 Mar 2022
+\nociteeprint{Carrier_2022_I} %
+\nociteeprint{Carrier_2022_II} % 
 
-\renewcommand{\refname}{Journal Articles} 
-\IfFileExists{../src/bib_link}{\bibliographystyle{../src/elsarticle-aps}}{\bibliographystyle{src/elsarticle-aps}}
+%% Listed here are journal publications only.
+%  Conference proceedings are found in talks.tex
+%  Listed in reverse order of publication
+\nocite{Anastasiou_2022}   
+\nocite{Davids_2019}   
+\nocite{Randhawa_2019}
+\nocite{Tanaka_2017}%10 Nov 2017
+\nocite{Kumar_2017}%28 June 2017
+\nocite{Bedoor_2016}%21 April 2016
+\nocite{Sanetullaev_2015}%2 March 2016
+\nocite{Kirsebom_2016}%2 February 2016
+\nocite{Kanungo_2015}%12 May 2015
+\nocite{Wuosmaa_2015}%8 December 2014
+\nocite{Hoffman_2013}%October 15, 2013
+\nocite{Bedoor_2013}%July 29, 2013
+\nocite{Kay_2013}%March 2013
+\nocite{Sharp_2013}%January 10, 2013
+\nocite{Hoffman_2012}%May 29, 2012
+\nocite{PMarley_2011}%October 31, 2011
+\nocite{Deibel_2011}%October 6, 2011
+\nocite{Kay_2011}%August, 2011
+\nocite{Alcorta_2011}%28 April 2011
+\nocite{Wuosmaa_2010} %23 September 2010
+\nocite{Lighthall_2010} %
+\nocite{Schiffer_2010}%31 March 2010
+\nocite{Lee_2010}%11 January 2010
+\nocite{Wuosmaa_2008}%10 October 2008
+\nocite{Tur_2008}%	
+
+% define preprint bibliography
+\renewcommand{\refnameeprint}{Preprints}
+\bibliographystyleeprint{src/elsarticle-aps} 
+
+% define article bibliography
+\newcommand{\artname}{Journal Articles}
+\renewcommand{\refname}{\artname}
+\renewcommand{\bibname}{\artname}
+\bibliographystyleeprint{src/elsarticle-aps}
+
+% insert bibliographies
 \phantomsection
 \addcontentsline{toc}{chapter}{Publications}
 \phantomsection
-\addcontentsline{toc}{section}{\refname}
-\IfFileExists{../src/bib_link}{\bibliography{../src/bib_link}}{\bibliography{src/bib_link}}
+\addcontentsline{toc}{section}{\refnameeprint}
+\bibliographyeprint{src/bib_link}
+\phantomsection
+\addcontentsline{toc}{section}{\artname}
+\bibliographyeprint{src/bib_link}
