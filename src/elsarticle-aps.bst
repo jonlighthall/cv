@@ -91,6 +91,7 @@ ENTRY
     doi % urlbst
     url % urlbst
     lastchecked % urlbst
+    primaryClass
   }
   {}
   { label short.list } % short.list added for \citet{}
@@ -1338,11 +1339,18 @@ FUNCTION {format.url}
   if$
 }
 
+FUNCTION {format.primaryClass}
+{ primaryClass empty$
+    { eprint }
+    {  eprint * " [" * primaryClass * "]"}
+    if$
+}
+
 FUNCTION {format.eprint}
 { eprint empty$
     { "" }
-    { eprintprefix eprint * eprinturl eprint * make.href }
-  if$
+    { eprintprefix format.primaryClass * eprinturl eprint * make.href }
+    if$
 }
 
 FUNCTION {format.doi}
@@ -1678,8 +1686,8 @@ FUNCTION {misc}
   title empty$ 'skip$ 'setup.inlinelink if$ % urlbst
   format.title output
   howpublished output
-  format.note output
   format.date output
+  format.note output
   %  fin.entry
   %  write.url
   title empty$ %These lines add URL instead of "[link]"
