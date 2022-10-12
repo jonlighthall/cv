@@ -45,6 +45,7 @@
 %% Then, define a new output profile (in TeXnicCenter) and enter the path of the new batch
 %% file in the Path to BibTex executable field.
 %\IfFileExists{multibib.bat}{}{\errmessage{Batch file for multibib not found}}
+\newcites{eprint}{E-Print}
 \newcites{talk}{Presentations}
 \newcites{proc}{Proceedings}
 \newcites{invi}{Invited Talks}
@@ -215,7 +216,6 @@ To Whom It May Concern at \recip,\\
 %% Include publication lists here
 \input{cv_pubs}
 \input{cv_talks}
-
 }
 
 \newcommand{\cvandpubs}{%Create CV and publication list as one document

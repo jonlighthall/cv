@@ -1,6 +1,11 @@
+%% E-prints, preprints, and manuscripts
+\nociteeprint{Sun_2022} % 19 Mar 2022
+\nociteeprint{Carrier_2022_I} %
+\nociteeprint{Carrier_2022_II} % 
+%
 %% Listed here are journal publications only.  Conference proceedings are found in talks.tex
 %  Listed in order of publication
-    \nocite{                Anastasiou_2021}   
+    \nocite{                Anastasiou_2022}   
     \nocite{                Davids_2019}   
 	\nocite{\jclonly{       Randhawa_2019}}
 	\nocite{\jclonly{       Tanaka_2017}}%10 Nov 2017
@@ -26,11 +31,19 @@
 	\nocite{\jclonly{		Wuosmaa_2008}}%10 October 2008
 	\nocite{\jclonly{		Tur_2008}}%	
 	\nocite{\heliosonly{    Wuosmaa_2007}}%
-
-\renewcommand{\refname}{Journal Articles} 
+\renewcommand{\refnameeprint}{Preprints}
+\bibliographystyleeprint{src/elsarticle-aps} 
+\newcommand{\artname}{Journal Articles}
+\renewcommand{\refname}{\artname}
+\renewcommand{\bibname}{\artname} 
 \IfFileExists{../src/bib_link}{\bibliographystyle{../src/elsarticle-aps}}{\bibliographystyle{src/elsarticle-aps}}
+%
 \phantomsection
 \addcontentsline{toc}{chapter}{Publications}
 \phantomsection
-\addcontentsline{toc}{section}{\refname}
+\addcontentsline{toc}{section}{\refnameeprint}
+\bibliographyeprint{src/bib_link}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{\artname}
 \IfFileExists{../src/bib_link}{\bibliography{../src/bib_link}}{\bibliography{src/bib_link}}
