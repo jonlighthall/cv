@@ -92,6 +92,7 @@ ENTRY
     url % urlbst
     lastchecked % urlbst
     primaryClass
+    cited
   }
   {}
   { label short.list } % short.list added for \citet{}
@@ -250,6 +251,7 @@ FUNCTION {output.check}
 
 FUNCTION {fin.entry.original}
 { add.period$
+ format.cited
   write$
   newline$
 }
@@ -1398,6 +1400,13 @@ FUNCTION {output.bibitem}
   if$
 }
 
+FUNCTION {format.cited}
+{ cited empty$
+    { "" }
+    { "cited by " cited * }
+  if$
+}
+
 FUNCTION {fin.entry}
 { output.web.refs  % urlbst
   makeinlinelink       % ooops, it appears we didn't have a title for inlinelink
@@ -1487,6 +1496,7 @@ FUNCTION {article}
       if$}
   if$
   fin.entry
+%  format.cited
   % write.url
 }
 
@@ -1804,7 +1814,7 @@ FUNCTION {begin.bib}
     'skip$
     { preamble$ write$ newline$ }
   if$
-  "\begin{thebibliography}{"  longest.label  * "}" *
+  "\begin{thebibliography}{" longest.label  * "}" *
   %"\begin{thebibliography}{99}" 
   write$ newline$
   "\expandafter\ifx\csname url\endcsname\relax"
