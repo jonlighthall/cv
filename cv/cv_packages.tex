@@ -46,6 +46,7 @@
 %% file in the Path to BibTex executable field.
 %\IfFileExists{multibib.bat}{}{\errmessage{Batch file for multibib not found}}
 \newcites{eprint}{E-Print}
+\newcites{report}{Reports}
 \newcites{talk}{Presentations}
 \newcites{proc}{Proceedings}
 \newcites{invi}{Invited Talks}
@@ -97,7 +98,7 @@
 %% Definitions for extras
 \newcommand{\extra}[1]{{\color{note_gray}#1}} %print extra items in gray
 %\renewcommand{\extra}[1]{#1} %Enters "notes" into text
-%\renewcommand{\extra}[1]{} %Deletes "notes"
+\renewcommand{\extra}[1]{} %Deletes "notes"
 
 %% Unabridged
 \newif\ifunabridged
