@@ -251,7 +251,6 @@ FUNCTION {output.check}
 
 FUNCTION {fin.entry.original}
 { add.period$
- format.cited
   write$
   newline$
 }
