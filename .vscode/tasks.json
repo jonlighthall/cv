@@ -1,0 +1,46 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "LaTeX: Build CV (cv/cv_main.tex)",
+      "type": "shell",
+      "command": "latexmk",
+      "args": [
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-synctex=1",
+        "-file-line-error",
+        "-outdir=build/cv",
+        "cv/cv_main.tex"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "TEXINPUTS": ".:..//:"
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "LaTeX: Build Letter (ltr/letter_main.tex)",
+      "type": "shell",
+      "command": "latexmk",
+      "args": [
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-synctex=1",
+        "-file-line-error",
+        "-outdir=../build/ltr",
+        "letter_main.tex"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/ltr"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
