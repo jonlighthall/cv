@@ -1,6 +1,23 @@
 {
   "latex-workshop.latex.autoBuild.run": "never",
   "latex-workshop.latex.outDir": "%DIR%/../build/cv",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-synctex=1",
+        "-file-line-error",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {
+        "TEXINPUTS": ".:..//:"
+      }
+    }
+  ],
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.synctex.afterBuild.enabled": true,
   "latex-workshop.latex.clean.fileTypes": [
