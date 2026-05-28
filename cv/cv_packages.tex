@@ -97,9 +97,9 @@
 { \end{list} }
 
 %% Definitions for extras
-\newcommand{\extra}[1]{{\color{note_gray}#1}} %print extra items in gray
-%\renewcommand{\extra}[1]{#1} %Enters "notes" into text
-%\renewcommand{\extra}[1]{} %Deletes "notes"
+\newif\ifshowextras
+\showextrasfalse % set to \showextrastrue to print extras in gray
+\newcommand{\extra}[1]{\ifshowextras{\color{note_gray}#1}\fi}
 
 %% Unabridged
 \newif\ifunabridged
