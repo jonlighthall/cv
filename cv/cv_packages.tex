@@ -3,10 +3,11 @@
 \providecommand{\printname}{Jonathan C.\ Lighthall}
 \newcommand{\shortname}{J.\ C.\ Lighthall}
 
+\InputIfFileExists{ltr/letter_layout}{}{%
 \InputIfFileExists{../ltr/letter_layout}{}{%
-\InputIfFileExists{../../ltr/letter_layout}{}{\errmessage{letter_layout.tex not found!}}}
+\InputIfFileExists{../../ltr/letter_layout}{}{\errmessage{letter_layout.tex not found!}}}}
 
-\graphicspath{{../ltr/signatures/}{../../ltr/signatures/}}
+\graphicspath{{ltr/signatures/}{../ltr/signatures/}{../../ltr/signatures/}}
 
 \def\reducemargin{0.25in}%text width is set to 6.25in with 1.25" margin
 \addtolength{\textwidth}{\reducemargin}
@@ -207,7 +208,7 @@ To Whom It May Concern at \recip,\\
 %%-----------------------------------------------------------------------------------------------
 \newcommand{\cvonly}{%Generate a stand-alone CV
 \addcontentsline{toc}{chapter}{Contact Information}
-\input{cv_body}
+\input{cv/cv_body}
 }
 
 \newcommand{\includepubs}{%
@@ -215,10 +216,10 @@ To Whom It May Concern at \recip,\\
 \renewcommand{\heliosonly}[1]{}
 %\renewcommand{\jclonly}[1]{}
 %% Include publication lists here
-\input{cv_pubs}
-\input{cv_pubs_def}
-\input{cv_talks}
-\input{cv_talks_def}
+\input{cv/cv_pubs}
+\input{cv/cv_pubs_def}
+\input{cv/cv_talks}
+\input{cv/cv_talks_def}
 }
 
 \newcommand{\cvandpubs}{%Create CV and publication list as one document
