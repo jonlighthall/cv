@@ -22,6 +22,7 @@
 # *.ps
 # *.eps
 # *.pdf
+cv_main.pdf
 
 # Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
@@ -43,3 +44,7 @@
 # Git 
 *.~*~
 **/.git*
+
+# LaTeX build artifacts
+*.fdb_latexmk
+*.fls
