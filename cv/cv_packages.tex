@@ -98,7 +98,7 @@
 %% Definitions for extras
 \newcommand{\extra}[1]{{\color{note_gray}#1}} %print extra items in gray
 %\renewcommand{\extra}[1]{#1} %Enters "notes" into text
-\renewcommand{\extra}[1]{} %Deletes "notes"
+%\renewcommand{\extra}[1]{} %Deletes "notes"
 
 %% Unabridged
 \newif\ifunabridged
@@ -216,7 +216,9 @@ To Whom It May Concern at \recip,\\
 %\renewcommand{\jclonly}[1]{}
 %% Include publication lists here
 \input{cv_pubs}
+\input{cv_pubs_def}
 \input{cv_talks}
+\input{cv_talks_def}
 }
 
 \newcommand{\cvandpubs}{%Create CV and publication list as one document

@@ -1,0 +1,29 @@
+\ifunabridged
+\newcommand{\abridgedname}{}
+\else
+\newcommand{\abridgedname}{ (abridged)}
+\fi
+
+\renewcommand{\refnameproc}{Conference Proceedings\abridgedname}
+\bibliographystyleproc{src/elsarticle-aps} 
+\phantomsection
+\addcontentsline{toc}{section}{\refnameproc}
+\bibliographyproc{src/bib_link}
+
+\renewcommand{\refnameinvi}{Invited Talks\abridgedname} 
+\bibliographystyleinvi{src/elsarticle-aps} 
+\phantomsection 
+\addcontentsline{toc}{section}{\refnameinvi}
+\bibliographyinvi{src/bib_link}
+
+\renewcommand{\refnametalk}{Contributed Abstracts\abridgedname}
+\bibliographystyletalk{src/elsarticle-aps} 
+\phantomsection 
+\addcontentsline{toc}{section}{\refnametalk}
+\bibliographytalk{src/bib_link}
+
+\ifunabridged
+	\else
+		\thispagestyle{fancy}
+		\lfoot{\abridgedfoot}
+	\fi

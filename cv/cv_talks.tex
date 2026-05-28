@@ -33,21 +33,31 @@
 \nociteinvi{Lighthall_2008SLM} % January 23, 2008
 
 % Contributed Aabstracts:
-%\nocitetalk{Ahn_2020} %2020 (canceled)
-\nocitetalk{Anastasiou_2019} %09:42 Wednesday, October 16, 2019
-\nocitetalk{Hanselman_2019} %12:21 Monday, April 15,2019
-\nocitetalk{Ingo_2018} %14:45 Saturday, October 27, 2018
-\nocitetalk{Pham_2018} %11:00 Saturday, October 27, 2018
-\nocitetalk{Good_2018} %10:45 Saturday, October 27, 2018
-\nocitetalk{Wang_2018} %9:45 Saturday, October 27, 2018
-\nocitetalk{Anastasiou_2018} %20:45 Thursday, October 25, 2018
-\nocitetalk{Upadhyayula_2017} %10:45 Thursday, October 26, 2017
-\nocitetalk{Lighthall_2017} %June 1, 2017
+%\nocitetalk{Ahn_2020} %2020 (canceled); LSU
+% DNP 2019
+\nocitetalk{Anastasiou_2019} %09:42 Wednesday, October 16, 2019; LSU
+\nocitetalk{Hanselman_2019} %12:21 Monday, April 15,2019; LSU
+% DNP 2018
+\nocitetalk{Ingo_2018} %14:45 Saturday, October 27, 2018; LSU
+\nocitetalk{Pham_2018} %11:00 Saturday, October 27, 2018; LSU
+\nocitetalk{Good_2018} %10:45 Saturday, October 27, 2018; LSU
+\nocitetalk{Wang_2018} %9:45 Saturday, October 27, 2018; TRIUMF
+\nocitetalk{Anastasiou_2018} %20:45 Thursday, October 25, 2018; LSU
+% DNP 2017
+\nocitetalk{Upadhyayula_2017} %10:45 Thursday, October 26, 2017; LSU
+% ARIS 2017
+\nocitetalk{Lighthall_2017} %June 1, 2017; 
+% DNP 2016
 \nocitetalk{Randhawa_2016}% 11:18 Friday, October 14, 2016
+% LECM 2016
 \nocitetalk{Lighthall_2016LECM} %August, 2016
+% WNPPC 2016
 \nocitetalk{Lighthall_2016} %10:15 Friday, February 12, 2016
+
 \nocitetalk{Marley_2015}% September, 2015
+
 \nocitetalk{Tanaka_2014} %March 2014
+
 \nocitetalk{Bedoor_2013APS} %8:54 Saturday, October 26, 2013
 \nocitetalk{Wuosmaa_2013APS} %8:42 Saturday, October 26, 2013
 \nocitetalk{Carnelli_2012} %8:54 Saturday, October 27, 2012
@@ -90,32 +100,3 @@
 %% posters!?
 %https://hal.archives-ouvertes.fr/in2p3-01077212v1
 
-\ifunabridged
-\newcommand{\abridgedname}{}
-\else
-\newcommand{\abridgedname}{ (abridged)}
-\fi
-
-\renewcommand{\refnameproc}{Conference Proceedings\abridgedname}
-\bibliographystyleproc{src/elsarticle-aps} 
-\phantomsection
-\addcontentsline{toc}{section}{\refnameproc}
-\bibliographyproc{src/bib_link}
-
-\renewcommand{\refnameinvi}{Invited Talks\abridgedname} 
-\bibliographystyleinvi{src/elsarticle-aps} 
-\phantomsection 
-\addcontentsline{toc}{section}{\refnameinvi}
-\bibliographyinvi{src/bib_link}
-
-\renewcommand{\refnametalk}{Contributed Abstracts\abridgedname}
-\bibliographystyletalk{src/elsarticle-aps} 
-\phantomsection 
-\addcontentsline{toc}{section}{\refnametalk}
-\bibliographytalk{src/bib_link}
-
-\ifunabridged
-	\else
-		\thispagestyle{fancy}
-		\lfoot{\abridgedfoot}
-	\fi
