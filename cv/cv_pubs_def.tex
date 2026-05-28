@@ -1,0 +1,37 @@
+% define preprint bibliography
+\renewcommand{\refnameeprint}{Preprints}
+\bibliographystyleeprint{src/elsarticle-aps} 
+
+% define article bibliography
+\newcommand{\artname}{Journal Articles}
+\renewcommand{\refname}{\artname}
+\renewcommand{\bibname}{\artname}
+\bibliographystyle{src/elsarticle-aps}
+
+% define report bibliography
+\renewcommand{\refnamereport}{Formal Reports}
+\bibliographystylereport{src/elsarticle-aps} 
+
+% insert bibliographies
+\phantomsection
+\addcontentsline{toc}{chapter}{Publications}
+%%-----------------------------------------------------------------------------------------------
+\section*{Author Identifiers}
+\begin{tabular}{r@{ }lc}
+ORCID:&\href{https://orcid.org/0000-0002-2686-7492}{0000-0002-2686-7492}\\
+arXiv:&\href{https://arxiv.org/a/lighthall_j_1.html}{{lighthall\_j\_1}}\\
+&&$h$-index\\
+Scopus:&\href{https://www.scopus.com/authid/detail.uri?authorId=23097932900}{23097932900}&15\\
+Google Scholar:&\href{https://scholar.google.com/citations?user=m-3paEoAAAAJ}{m-3paEoAAAAJ}&\textbf{16}\\
+Web of Science:&\href{https://www.webofscience.com/wos/author/record/GWV-5714-2022}{GWV-5714-2022}&\textbf{16}\\
+\end{tabular}
+%%-----------------------------------------------------------------------------------------------
+\phantomsection
+\addcontentsline{toc}{section}{\refnameeprint}
+\bibliographyeprint{src/bib_link}
+\phantomsection
+\addcontentsline{toc}{section}{\artname}
+\bibliography{src/bib_link}
+\phantomsection
+\addcontentsline{toc}{section}{\refnamereport}
+\bibliographyreport{src/bib_link}
